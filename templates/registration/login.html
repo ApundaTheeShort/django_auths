@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Log In{% endblock %}
 
 {% block content %}
 <h2>Log In</h2>
 <form method="post">
   {% csrf_token %}
-  {{ form }}
+  {{ form.as_p }}
   <button type="submit">Log In</button>
 </form>
+
+<div class="nav-links">
+  <p>Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></p>
+  <p><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
+</div>
 {% endblock %}

@@ -120,4 +120,10 @@ STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# Remember me settings
+SESSION_COOKIE_AGE = 1209600 # 2 weeks
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
